@@ -1,0 +1,80 @@
+/* Estilos para os tipos de Nen */
+.nen-type-card {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.nen-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nen-type-header {
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nen-type-body {
+    padding: 15px;
+    background-color: rgba(19, 15, 64, 0.8);
+}
+
+/* Cores específicas para cada tipo */
+.enhancer-card .nen-type-header {
+    background-color: var(--nen-enhancer);
+}
+
+.transmuter-card .nen-type-header {
+    background-color: var(--nen-transmuter);
+}
+
+.conjurer-card .nen-type-header {
+    background-color: var(--nen-conjurer);
+}
+
+.emitter-card .nen-type-header {
+    background-color: var(--nen-emitter);
+}
+
+.manipulator-card .nen-type-header {
+    background-color: var(--nen-manipulator);
+}
+
+.specialist-card .nen-type-header {
+    background-color: var(--nen-specialist);
+}
+
+/* Quiz de Nen */
+.nen-quiz {
+    background-color: rgba(19, 15, 64, 0.8);
+    border: 1px solid var(--secondary-color);
+}
+
+.nen-quiz .card-title {
+    color: var(--secondary-color);
+}
+
+.nen-chart {
+    background-color: rgba(19, 15, 64, 0.8);
+    border: 1px solid var(--secondary-color);
+}
+
+/* Accordion de técnicas */
+.accordion-button {
+    background-color: rgba(19, 15, 64, 0.8);
+    color: var(--light-color);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(10, 61, 98, 0.8);
+    color: var(--secondary-color);
+}
+
+.accordion-body {
+    background-color: rgba(19, 15, 64, 0.6);
+}
