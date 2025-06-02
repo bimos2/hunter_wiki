@@ -11,7 +11,104 @@
     color: white;
     overflow: hidden;
 }
+/* Layout Vertical */
+.characters-vertical-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
 
+.character-vertical-item {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    min-width: 80px; /* Largura mínima quando não hover */
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(30%) brightness(0.7);
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Efeito hover */
+.character-vertical-item:hover {
+    flex: 3;
+    min-width: 300px;
+    filter: grayscale(0%) brightness(1);
+}
+
+/* Nome do personagem */
+.character-vertical-name {
+    color: white;
+    font-family: 'Black Ops One', cursive;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 20px 10px;
+    margin: 0;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.character-vertical-item:hover .character-vertical-name {
+    opacity: 1;
+    font-size: 2.5rem;
+}
+
+/* Efeito de overlay */
+.character-vertical-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(19, 15, 64, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+/* Efeito de brilho ao passar o mouse */
+.character-vertical-item:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(249, 202, 36, 0.1) 0%, 
+        transparent 50%, 
+        rgba(249, 202, 36, 0.1) 100%);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .characters-vertical-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .character-vertical-item {
+        width: 100%;
+        height: 200px;
+        min-width: 100% !important;
+    }
+    
+    .character-vertical-name {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+}
 .characters-banner::before {
     content: '';
     position: absolute;
@@ -40,6 +137,126 @@
     margin: 0 auto;
 }
 
+.search-box, .nen-filter-box {
+    position: relative;
+}
+
+.search-box i, .nen-filter-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    z-index: 10;
+}
+
+#char-search, #nen-filter {
+    padding-left: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--secondary-color);
+    color: white; /* Texto branco */
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Cor do texto quando o input está em foco */
+#char-search:focus, #nen-filter:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white; /* Mantém o texto branco */
+    box-shadow: 0 0 0 0.25rem rgba(249, 202, 36, 0.25);
+    border-color: var(--secondary-color);
+}
+
+/* Placeholder visível */
+#char-search::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Opções do select - importante para legibilidade */
+#nen-filter option {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+/* Dropdown do select no Chrome/Firefox */
+#nen-filter:focus option:checked {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+/* Para navegadores WebKit (Chrome, Safari) */
+select option {
+    background: var(--dark-color);
+    color: white;
+}
+
+/* Para Firefox */
+@-moz-document url-prefix() {
+    select {
+        color: white;
+        text-shadow: 0 0 0 white;
+    }
+    select option {
+        background-color: var(--dark-color);
+    }
+}
+
+/* Para Internet Explorer */
+select::-ms-value {
+    color: white;
+    background: transparent;
+}
+/* Adicione isso ao seu arquivo characters.css */
+
+/* Estilo do botão Ver Detalhes */
+.btn-details {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    border: none;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-details:hover {
+    background-color: #ffd32a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(249, 202, 36, 0.4);
+}
+
+/* Cores específicas para cada tipo de Nen nos botões */
+.enhancer .btn-details {
+    background-color: var(--nen-enhancer);
+    color: white;
+}
+
+.transmuter .btn-details {
+    background-color: var(--nen-transmuter);
+    color: white;
+}
+
+.conjurer .btn-details {
+    background-color: var(--nen-conjurer);
+    color: white;
+}
+
+.emitter .btn-details {
+    background-color: var(--nen-emitter);
+    color: white;
+}
+
+.manipulator .btn-details {
+    background-color: var(--nen-manipulator);
+    color: white;
+}
+
+.specialist .btn-details {
+    background-color: var(--nen-specialist);
+    color: white;
+}
 /* Filtros */
 .filter-section {
     background-color: rgba(19, 15, 64, 0.8);
@@ -213,14 +430,16 @@
 
 .character-detail-container {
     display: flex;
-    min-height: 600px;
+    height: 80vh;
 }
 
 .character-detail-left {
     flex: 1;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    overflow: hidden;
 }
+
 
 .character-detail-bg {
     position: absolute;
@@ -229,7 +448,14 @@
     object-fit: cover;
     filter: brightness(0.7);
 }
-
+.character-detail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(19, 15, 64, 0.8), transparent);
+}
 .character-detail-image {
     position: absolute;
     bottom: 0;
@@ -309,6 +535,7 @@
 @media (max-width: 992px) {
     .character-detail-container {
         flex-direction: column;
+        height: auto;
     }
     
     .character-detail-left {
@@ -358,5 +585,81 @@
     
     .character-name {
         font-size: 1.3rem;
+    }
+}
+/* Layout para Mobile */
+@media (max-width: 768px) {
+    .characters-vertical-container.mobile-layout {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .character-mobile-item {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    
+    .character-mobile-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(to top, rgba(19, 15, 64, 0.9), transparent);
+    }
+    
+    .character-mobile-name {
+        color: white;
+        font-family: 'Black Ops One', cursive;
+        font-size: 1.8rem;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .character-mobile-nen {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    
+    /* Ajustes para o modal em mobile */
+    .character-detail-container {
+        flex-direction: column;
+    }
+    
+    .character-detail-left {
+        height: 200px;
+    }
+    
+    .character-detail-right {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+}
+
+/* Melhorias para telas muito pequenas */
+@media (max-width: 480px) {
+    .character-mobile-item {
+        height: 150px;
+    }
+    
+    .character-mobile-name {
+        font-size: 1.5rem;
+    }
+    
+    .banner-title {
+        font-size: 2.5rem;
+    }
+    
+    .banner-subtitle {
+        font-size: 1rem;
     }
 }

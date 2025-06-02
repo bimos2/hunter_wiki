@@ -1,13 +1,12 @@
-// Dados dos personagens com wallpapers específicos
+// Dados dos personagens
 const characters = [
     {
         id: "gon",
         name: "Gon Freecss",
         bgImage: "assets/images/characters/gon-bg.jpg",
-        charImage: "assets/images/characters/gon.png",
         nenType: "enhancer",
-        description: "Um jovem e determinado Hunter em busca de seu pai, Ging Freecss. Gon é um Enhancer com uma incrível capacidade de crescimento e uma personalidade otimista e teimosa.",
-        abilities: ["Jajanken", "Ataque de Pedra", "Ataque de Tesoura", "Ataque de Papel", "Força Aprimorada"],
+        description: "Um jovem e determinado Hunter em busca de seu pai, Ging Freecss.",
+        abilities: ["Jajanken", "Ataque de Pedra", "Ataque de Tesoura", "Ataque de Papel"],
         stats: {
             power: 85,
             intelligence: 70,
@@ -21,11 +20,10 @@ const characters = [
     {
         id: "killua",
         name: "Killua Zoldyck",
-        bgImage: "assets/images/characters/killua.gif",
-        charImage: "assets/images/characters/killua.png",
+        bgImage: "assets/images/characters/killua-bg.jpg",
         nenType: "transmuter",
-        description: "Ex-assassino da família Zoldyck e melhor amigo de Gon. Killua é um prodígio com habilidades excepcionais e velocidade relâmpago.",
-        abilities: ["Garra Elétrica", "Velocidade Relâmpago", "Kanmuru", "Assassinato Silencioso", "Resistência a Venenos"],
+        description: "Ex-assassino da família Zoldyck e melhor amigo de Gon.",
+        abilities: ["Garra Elétrica", "Velocidade Relâmpago", "Kanmuru", "Assassinato Silencioso"],
         stats: {
             power: 80,
             intelligence: 90,
@@ -39,11 +37,10 @@ const characters = [
     {
         id: "kurapika",
         name: "Kurapika",
-        bgImage: "assets/images/characters/kurapika.gif",
-        charImage: "assets/images/characters/kurapika-bg.jpg",
+        bgImage: "assets/images/characters/kurapika-bg.jpg",
         nenType: "conjurer",
-        description: "O último sobrevivente do clã Kurta, Kurapika jurou vingança contra a Trupe Fantasma pelos olhos escarlates de seu povo.",
-        abilities: ["Correntes do Juramento", "Olhos Escarlates", "Cura Restritiva", "Detecção de Mentiras", "Cadeias de Ferro"],
+        description: "O último sobrevivente do clã Kurta, em busca de vingança contra a Trupe Fantasma.",
+        abilities: ["Correntes do Juramento", "Olhos Escarlates", "Cura Restritiva", "Detecção de Mentiras"],
         stats: {
             power: 75,
             intelligence: 95,
@@ -55,13 +52,29 @@ const characters = [
         bio: "Kurapika é um membro do clã Kurta, conhecido por seus olhos escarlates que ficam mais poderosos quando ele experimenta emoções fortes. Ele desenvolveu um sistema Nen único com restrições específicas para combater a Trupe Fantasma."
     },
     {
+        id: "leorio",
+        name: "Leorio Paradinight",
+        bgImage: "assets/images/characters/leorio.jpg",
+        nenType: "emitter",
+        description: "Amigo de Gon e Killua que deseja se tornar médico para ajudar os necessitados.",
+        abilities: ["Ultra Punch", "Remote Punch", "Medical Knowledge", "Emission"],
+        stats: {
+            power: 75,
+            intelligence: 80,
+            speed: 70,
+            endurance: 75,
+            nen: 70,
+            potential: 80
+        },
+        bio: "Leorio é um dos personagens mais humanos da série, com objetivos nobres e um grande coração. Inicialmente parece estar apenas atrás de dinheiro, mas seu verdadeiro objetivo é se tornar médico para ajudar pessoas carentes."
+    },
+    {
         id: "hisoka",
         name: "Hisoka",
-        bgImage: "assets/images/characters/hisoka.gif",
-        charImage: "assets/images/characters/hisoka.png",
+        bgImage: "assets/images/characters/hisoka.jpg",
         nenType: "transmuter",
-        description: "Um lutador sádico e imprevisível que busca oponentes fortes para satisfazer seus desejos de batalha.",
-        abilities: ["Bungee Gum", "Texture Surprise", "Aura Assassina", "Extrema Flexibilidade", "Estratégia de Combate"],
+        description: "Um lutador sádico e imprevisível que busca oponentes fortes.",
+        abilities: ["Bungee Gum", "Texture Surprise", "Aura Assassina", "Extrema Flexibilidade"],
         stats: {
             power: 90,
             intelligence: 85,
@@ -71,100 +84,89 @@ const characters = [
             potential: 85
         },
         bio: "Hisoka é um dos personagens mais imprevisíveis e perigosos de Hunter x Hunter. Ele é obcecado por encontrar oponentes fortes e muitas vezes poupa inimigos promissores para lutar contra eles quando estiverem mais poderosos. Sua habilidade Bungee Gum tem as propriedades de borracha e chiclete."
+    },
+    {
+        id: "chrollo",
+        name: "Chrollo Lucilfer",
+        bgImage: "assets/images/characters/chrollo.jpg",
+        nenType: "specialist",
+        description: "Líder da Trupe Fantasma e um dos personagens mais misteriosos da série.",
+        abilities: ["Bandit's Secret", "Skill Hunter", "Double Face", "Order Stamp"],
+        stats: {
+            power: 85,
+            intelligence: 95,
+            speed: 85,
+            endurance: 80,
+            nen: 95,
+            potential: 90
+        },
+        bio: "Chrollo Lucilfer é o carismático e enigmático líder da Trupe Fantasma. Sua habilidade Nen permite-lhe roubar as habilidades de outros usuários de Nen, desde que cumpra condições específicas. Ele é extremamente inteligente e um estrategista brilhante."
+    },
+    {
+        id: "meruem",
+        name: "Rei Meruem",
+        bgImage: "assets/images/characters/meruem.jpg",
+        nenType: "specialist",
+        description: "O Rei dos Quimera Ants e um dos seres mais poderosos do universo Hunter x Hunter.",
+        abilities: ["Aura Synthesis", "En", "Ultimate Defense", "Photon"],
+        stats: {
+            power: 100,
+            intelligence: 100,
+            speed: 95,
+            endurance: 100,
+            nen: 100,
+            potential: 100
+        },
+        bio: "Meruem é o produto final da evolução das Formigas Quimera. Ele nasce com habilidades extraordinárias e uma inteligência que se desenvolve rapidamente. Ao longo do arco, ele passa por uma notável evolução emocional e filosófica."
+    },
+    {
+        id: "neferpitou",
+        name: "Neferpitou",
+        bgImage: "assets/images/characters/neferpitou.jpg",
+        nenType: "specialist",
+        description: "Um dos Guardas Reais das Formigas Quimera, extremamente leal ao Rei Meruem.",
+        abilities: ["Doctor Blythe", "Terpsichora", "En", "Enhanced Agility"],
+        stats: {
+            power: 95,
+            intelligence: 85,
+            speed: 95,
+            endurance: 90,
+            nen: 90,
+            potential: 95
+        },
+        bio: "Neferpitou é o primeiro dos Guardas Reais a nascer. Sua habilidade Nen se manifesta principalmente em técnicas médicas e combate corporal. Ele é extremamente leal ao Rei Meruem e possui instintos assassinos extremamente apurados."
+    },
+/*{
+    id: "netero",
+    name: "Isaac Netero",
+    bgImage: "assets/images/characters/netero.jpg",
+    nenType: "enhancer",
+    description: "Ex-presidente da Associação Hunter e um dos maiores usuários de Nen do mundo.",
+    abilities: ["100-Type Guanyin Bodhisattva", "Hyakushiki Kannon", "Prayer Technique", "Enhanced Speed"],
+    stats: {
+        power: 100,
+        intelligence: 95,
+        speed: 100,
+        endurance: 90,
+        nen: 100,
+        potential: 100
+    },
+    bio: "Isaac Netero foi o 12º presidente da Associação Hunter e considerado o mais forte Hunter do mundo em seu auge. Após anos de treinamento extremo nas montanhas, ele desenvolveu sua técnica lendária de invocação. Mesmo em sua velhice, permaneceu uma força formidável, capaz de derrotar a maioria dos oponentes com facilidade. Sua batalha contra o Rei Meruem é considerada uma das maiores da história."
+},*/
+    {
+        id: "zeno",
+        name: "Zeno Zoldyck",
+        bgImage: "assets/images/characters/zeno.jpg",
+        nenType: "emitter",
+        description: "Avô de Killua e lendário assassino.",
+        abilities: ["Dragon Head", "Dragon Lance", "Assassin Techniques"],
+        stats: { power: 95, intelligence: 90, speed: 90, endurance: 85, nen: 95 },
+        bio: "Zeno Zoldyck é o ex-líder da família Zoldyck e avô de Killua. Apesar de sua idade avançada, continua sendo um dos assassinos mais perigosos do mundo."
     }
     // Adicione mais personagens conforme necessário
 ];
 
-// Carregar personagens na página
-document.addEventListener('DOMContentLoaded', function() {
-    const grid = document.getElementById('characters-grid');
-    
-    characters.forEach(char => {
-        const charCard = document.createElement('div');
-        charCard.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
-        charCard.innerHTML = `
-            <div class="character-card" data-char-id="${char.id}" data-nen-type="${char.nenType}" data-name="${char.name.toLowerCase()}">
-                <img src="${char.bgImage}" alt="${char.name}" class="character-bg">
-                <div class="character-overlay"></div>
-                <button class="fav-btn" data-char-id="${char.id}" onclick="toggleFavorite(this)">
-                    <i class="far fa-heart"></i>
-                </button>
-                <div class="character-content">
-                    <h2 class="character-name">${char.name}</h2>
-                    <span class="character-nen-type ${char.nenType}">${char.nenType.toUpperCase()}</span>
-                    <p class="character-desc">${char.description.substring(0, 100)}...</p>
-                    <div class="character-abilities">
-                        ${char.abilities.slice(0, 3).map(ability => `
-                            <span class="ability-tag">${ability}</span>
-                        `).join('')}
-                        ${char.abilities.length > 3 ? `<span class="ability-tag">+${char.abilities.length - 3}</span>` : ''}
-                    </div>
-                    <button class="btn btn-sm btn-details mt-2" data-bs-toggle="modal" data-bs-target="#characterModal" 
-                            onclick="loadCharacterDetails('${char.id}')">
-                        Ver Detalhes
-                    </button>
-                </div>
-            </div>
-        `;
-        grid.appendChild(charCard);
-    });
-    
-    // Carregar favoritos do LocalStorage
-    const favChars = JSON.parse(localStorage.getItem('hxhFavoriteChars')) || [];
-    favChars.forEach(charId => {
-        const favBtn = document.querySelector(`.fav-btn[data-char-id="${charId}"]`);
-        if (favBtn) {
-            favBtn.classList.add('active');
-            favBtn.innerHTML = '<i class="fas fa-heart"></i>';
-        }
-    });
-    
-    // Filtros
-    document.getElementById('char-search').addEventListener('input', filterCharacters);
-    document.getElementById('nen-filter').addEventListener('change', filterCharacters);
-});
-
-// Filtrar personagens
-function filterCharacters() {
-    const searchTerm = document.getElementById('char-search').value.toLowerCase();
-    const nenFilter = document.getElementById('nen-filter').value;
-    
-    document.querySelectorAll('.character-card').forEach(card => {
-        const charName = card.getAttribute('data-name');
-        const charNenType = card.getAttribute('data-nen-type');
-        
-        const nameMatch = charName.includes(searchTerm);
-        const nenMatch = nenFilter === 'all' || charNenType === nenFilter;
-        
-        if (nameMatch && nenMatch) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-
-// Alternar favoritos
-function toggleFavorite(btn) {
-    const charId = btn.getAttribute('data-char-id');
-    let favChars = JSON.parse(localStorage.getItem('hxhFavoriteChars')) || [];
-    
-    if (btn.classList.contains('active')) {
-        // Remover dos favoritos
-        favChars = favChars.filter(id => id !== charId);
-        btn.classList.remove('active');
-        btn.innerHTML = '<i class="far fa-heart"></i>';
-    } else {
-        // Adicionar aos favoritos
-        favChars.push(charId);
-        btn.classList.add('active');
-        btn.innerHTML = '<i class="fas fa-heart"></i>';
-    }
-    
-    localStorage.setItem('hxhFavoriteChars', JSON.stringify(favChars));
-}
-
-// Carregar detalhes do personagem no modal
+// Função para carregar os detalhes do personagem no modal
 function loadCharacterDetails(charId) {
     const char = characters.find(c => c.id === charId);
     if (!char) return;
@@ -174,9 +176,8 @@ function loadCharacterDetails(charId) {
     const modalBody = document.getElementById('charModalBody');
     modalBody.innerHTML = `
         <div class="character-detail-container">
-            <div class="character-detail-left">
-                <img src="${char.bgImage}" alt="${char.name}" class="character-detail-bg">
-                <img src="${char.charImage}" alt="${char.name}" class="character-detail-image">
+            <div class="character-detail-left" style="background-image: url('${char.bgImage}')">
+                <div class="character-detail-overlay"></div>
             </div>
             <div class="character-detail-right">
                 <h2 class="character-detail-title">${char.name}</h2>
@@ -213,4 +214,101 @@ function loadCharacterDetails(charId) {
             </div>
         </div>
     `;
+    
+    // Mostra o modal
+    const modal = new bootstrap.Modal(document.getElementById('characterModal'));
+    modal.show();
 }
+
+// Carregar personagens no layout vertical
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('characters-vertical');
+    
+    characters.forEach(char => {
+        const charItem = document.createElement('div');
+        charItem.className = 'character-vertical-item';
+        charItem.style.backgroundImage = `url('${char.bgImage}')`;
+        charItem.setAttribute('data-char-id', char.id);
+        
+        charItem.innerHTML = `
+            <div class="character-vertical-overlay">
+                <h2 class="character-vertical-name">${char.name}</h2>
+            </div>
+        `;
+        
+        // Adicionar evento de clique para mostrar detalhes
+        charItem.addEventListener('click', function() {
+            loadCharacterDetails(char.id);
+        });
+        
+        container.appendChild(charItem);
+    });
+});
+
+// Função para detectar dispositivos móveis
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
+// Carregar personagens com layout responsivo
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('characters-vertical');
+    
+    // Limpar container
+    container.innerHTML = '';
+    
+    // Verificar se é mobile
+    const mobileLayout = isMobileDevice() || window.innerWidth < 768;
+    
+    if (mobileLayout) {
+        // Layout para mobile - lista vertical
+        container.classList.add('mobile-layout');
+        characters.forEach(char => {
+            const charItem = document.createElement('div');
+            charItem.className = 'character-mobile-item';
+            charItem.style.backgroundImage = `url('${char.bgImage}')`;
+            charItem.setAttribute('data-char-id', char.id);
+            
+            charItem.innerHTML = `
+                <div class="character-mobile-overlay">
+                    <h2 class="character-mobile-name">${char.name}</h2>
+                    <span class="character-mobile-nen ${char.nenType}">${char.nenType.toUpperCase()}</span>
+                </div>
+            `;
+            
+            charItem.addEventListener('click', function() {
+                loadCharacterDetails(char.id);
+            });
+            
+            container.appendChild(charItem);
+        });
+    } else {
+        // Layout para desktop - colunas horizontais
+        container.classList.remove('mobile-layout');
+        characters.forEach(char => {
+            const charItem = document.createElement('div');
+            charItem.className = 'character-vertical-item';
+            charItem.style.backgroundImage = `url('${char.bgImage}')`;
+            charItem.setAttribute('data-char-id', char.id);
+            
+            charItem.innerHTML = `
+                <div class="character-vertical-overlay">
+                    <h2 class="character-vertical-name">${char.name}</h2>
+                </div>
+            `;
+            
+            charItem.addEventListener('click', function() {
+                loadCharacterDetails(char.id);
+            });
+            
+            container.appendChild(charItem);
+        });
+    }
+});
+
+// Redimensionar ao mudar tamanho da tela
+window.addEventListener('resize', function() {
+    // Recarregar os personagens quando a tela mudar de tamanho
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+});
+
