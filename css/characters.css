@@ -644,7 +644,90 @@ select::-ms-value {
         overflow-y: auto;
     }
 }
+/* Estilos para o GIF aumentado */
+.character-detail-left {
+    position: relative;
+    background: #000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Altura maior para o container */
+    min-height: 500px; /* Altura mínima */
+    overflow: hidden;
+}
 
+.character-detail-gif {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom ao passar o mouse (opcional) */
+.character-detail-gif:hover {
+    transform: scale(1.05);
+}
+/* Efeito de carregamento */
+.character-detail-gif {
+    background: linear-gradient(90deg, #130f40 0%, #1a1552 50%, #130f40 100%);
+    background-size: 200% 200%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.character-detail-gif[src] {
+    background: none;
+    animation: none;
+}
+
+#characterModal .modal-dialog {
+    max-width: 90%;
+    min-height: 80vh;
+}
+
+#characterModal .modal-content {
+    background: transparent;
+    border: none;
+}
+
+#characterModal .modal-body {
+    padding: 0;
+}
+
+.character-detail-left {
+    position: relative;
+    height: 80vh;
+    padding: 0;
+    margin: 0;
+}
+
+.character-detail-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Esconde o overlay se estiver cobrindo muito */
+.character-detail-overlay {
+    background: linear-gradient(to top, rgba(19, 15, 64, 0.8), transparent 70%) !important;
+}
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .character-detail-left {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .character-detail-gif {
+        max-height: 95%;
+        max-width: 95%;
+    }
+}
 /* Melhorias para telas muito pequenas */
 @media (max-width: 480px) {
     .character-mobile-item {

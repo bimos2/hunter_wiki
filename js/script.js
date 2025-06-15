@@ -64,3 +64,34 @@ if (document.querySelector('.character-card')) {
         });
     });
 }
+function adjustBackground() {
+    const video = document.getElementById('bg-video');
+    const mobileBg = document.querySelector('.mobile-background');
+    
+    if (window.innerWidth <= 768) {
+        // Modo mobile - usar imagem
+        if (video) video.style.display = 'none';
+        if (mobileBg) mobileBg.style.display = 'block';
+        
+        // Pausar o vídeo para economizar recursos
+        if (video) video.pause();
+    } else {
+        // Modo desktop - usar vídeo
+        if (video) {
+            video.style.display = 'block';
+            video.play();
+        }
+        if (mobileBg) mobileBg.style.display = 'none';
+    }
+}
+
+// Executar ao carregar e ao redimensionar
+document.addEventListener('DOMContentLoaded', function() {
+    adjustBackground();
+    
+    // Adicionar outros event listeners existentes...
+});
+
+window.addEventListener('resize', function() {
+    adjustBackground();
+});
