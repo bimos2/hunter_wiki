@@ -248,6 +248,67 @@ body {
     transform: translateY(-3px);
 }
 
+/* Estilos para o background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.mobile-background {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/banner-celular.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.396);
+}
+
+/* Media query para mobile */
+@media (max-width: 768px) {
+    .video-background video {
+        display: none;
+    }
+    
+    .mobile-background {
+        display: block;
+    }
+    
+    /* Ajuste adicional para melhor visualização no mobile */
+    .main-content {
+        padding-top: 60px;
+    }
+    
+    .main-title {
+        font-size: 3rem !important;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem !important;
+    }
+}
 /* Responsividade */
 @media (max-width: 768px) {
     .main-title {
@@ -273,4 +334,115 @@ body {
         width: 80px;
         font-size: 0.7rem;
     }
+}
+/* Menu mobile saindo da esquerda */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 80%;
+        max-width: 300px;
+        padding: 2rem 1rem;
+        background-color: rgba(19, 15, 64, 0.98);
+        z-index: 1050;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+    
+    /* Overlay quando o menu está aberto */
+    .navbar-collapse::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 80%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    
+    .navbar-collapse.show::after {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    /* Ajuste nos itens do menu */
+    .navbar-nav {
+        margin-top: 2rem;
+    }
+    
+    .nav-item {
+        margin-bottom: 1rem;
+    }
+    
+    /* Botão de fechar personalizado */
+    .navbar-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: white;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+    }
+}
+/* Animação do ícone hamburger */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    transform: translateY(-6px);
+}
+
+.navbar-toggler-icon::after {
+    transform: translateY(6px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
 }

@@ -1,9 +1,10 @@
-// Dados dos personagens
+// Dados dos personagens (atualizado com URLs de GIFs)
 const characters = [
     {
         id: "gon",
         name: "Gon Freecss",
         bgImage: "assets/images/characters/gon-bg.jpg",
+        gif: "assets/images/characters/gon.gif",
         nenType: "enhancer",
         description: "Um jovem e determinado Hunter em busca de seu pai, Ging Freecss.",
         abilities: ["Jajanken", "Ataque de Pedra", "Ataque de Tesoura", "Ataque de Papel"],
@@ -21,6 +22,7 @@ const characters = [
         id: "killua",
         name: "Killua Zoldyck",
         bgImage: "assets/images/characters/killua-bg.jpg",
+        gif: "assets/images/characters/killua.gif",
         nenType: "transmuter",
         description: "Ex-assassino da família Zoldyck e melhor amigo de Gon.",
         abilities: ["Garra Elétrica", "Velocidade Relâmpago", "Kanmuru", "Assassinato Silencioso"],
@@ -38,6 +40,7 @@ const characters = [
         id: "kurapika",
         name: "Kurapika",
         bgImage: "assets/images/characters/kurapika-bg.jpg",
+        gif: "assets/images/characters/kurapika.gif",
         nenType: "conjurer",
         description: "O último sobrevivente do clã Kurta, em busca de vingança contra a Trupe Fantasma.",
         abilities: ["Correntes do Juramento", "Olhos Escarlates", "Cura Restritiva", "Detecção de Mentiras"],
@@ -55,6 +58,7 @@ const characters = [
         id: "leorio",
         name: "Leorio Paradinight",
         bgImage: "assets/images/characters/leorio.jpg",
+        gif: "assets/images/characters/leorio.gif",
         nenType: "emitter",
         description: "Amigo de Gon e Killua que deseja se tornar médico para ajudar os necessitados.",
         abilities: ["Ultra Punch", "Remote Punch", "Medical Knowledge", "Emission"],
@@ -72,6 +76,7 @@ const characters = [
         id: "hisoka",
         name: "Hisoka",
         bgImage: "assets/images/characters/hisoka.jpg",
+        gif: "assets/images/characters/hisoka.gif",
         nenType: "transmuter",
         description: "Um lutador sádico e imprevisível que busca oponentes fortes.",
         abilities: ["Bungee Gum", "Texture Surprise", "Aura Assassina", "Extrema Flexibilidade"],
@@ -89,6 +94,7 @@ const characters = [
         id: "chrollo",
         name: "Chrollo Lucilfer",
         bgImage: "assets/images/characters/chrollo.jpg",
+        gif: "assets/images/characters/chrollo.gif",
         nenType: "specialist",
         description: "Líder da Trupe Fantasma e um dos personagens mais misteriosos da série.",
         abilities: ["Bandit's Secret", "Skill Hunter", "Double Face", "Order Stamp"],
@@ -106,6 +112,7 @@ const characters = [
         id: "meruem",
         name: "Rei Meruem",
         bgImage: "assets/images/characters/meruem.jpg",
+        gif: "assets/images/characters/rei.gif",
         nenType: "specialist",
         description: "O Rei dos Quimera Ants e um dos seres mais poderosos do universo Hunter x Hunter.",
         abilities: ["Aura Synthesis", "En", "Ultimate Defense", "Photon"],
@@ -123,6 +130,7 @@ const characters = [
         id: "neferpitou",
         name: "Neferpitou",
         bgImage: "assets/images/characters/neferpitou.jpg",
+        gif: "assets/images/characters/neferpitou.gif",
         nenType: "specialist",
         description: "Um dos Guardas Reais das Formigas Quimera, extremamente leal ao Rei Meruem.",
         abilities: ["Doctor Blythe", "Terpsichora", "En", "Enhanced Agility"],
@@ -136,37 +144,20 @@ const characters = [
         },
         bio: "Neferpitou é o primeiro dos Guardas Reais a nascer. Sua habilidade Nen se manifesta principalmente em técnicas médicas e combate corporal. Ele é extremamente leal ao Rei Meruem e possui instintos assassinos extremamente apurados."
     },
-/*{
-    id: "netero",
-    name: "Isaac Netero",
-    bgImage: "assets/images/characters/netero.jpg",
-    nenType: "enhancer",
-    description: "Ex-presidente da Associação Hunter e um dos maiores usuários de Nen do mundo.",
-    abilities: ["100-Type Guanyin Bodhisattva", "Hyakushiki Kannon", "Prayer Technique", "Enhanced Speed"],
-    stats: {
-        power: 100,
-        intelligence: 95,
-        speed: 100,
-        endurance: 90,
-        nen: 100,
-        potential: 100
-    },
-    bio: "Isaac Netero foi o 12º presidente da Associação Hunter e considerado o mais forte Hunter do mundo em seu auge. Após anos de treinamento extremo nas montanhas, ele desenvolveu sua técnica lendária de invocação. Mesmo em sua velhice, permaneceu uma força formidável, capaz de derrotar a maioria dos oponentes com facilidade. Sua batalha contra o Rei Meruem é considerada uma das maiores da história."
-},*/
     {
         id: "zeno",
         name: "Zeno Zoldyck",
         bgImage: "assets/images/characters/zeno.jpg",
+        gif: "assets/images/characters/zeno.gif",
         nenType: "emitter",
         description: "Avô de Killua e lendário assassino.",
         abilities: ["Dragon Head", "Dragon Lance", "Assassin Techniques"],
         stats: { power: 95, intelligence: 90, speed: 90, endurance: 85, nen: 95 },
         bio: "Zeno Zoldyck é o ex-líder da família Zoldyck e avô de Killua. Apesar de sua idade avançada, continua sendo um dos assassinos mais perigosos do mundo."
     }
-    // Adicione mais personagens conforme necessário
 ];
 
-// Função para carregar os detalhes do personagem no modal
+// Função para carregar os detalhes do personagem no modal (atualizada com GIF)
 function loadCharacterDetails(charId) {
     const char = characters.find(c => c.id === charId);
     if (!char) return;
@@ -176,7 +167,8 @@ function loadCharacterDetails(charId) {
     const modalBody = document.getElementById('charModalBody');
     modalBody.innerHTML = `
         <div class="character-detail-container">
-            <div class="character-detail-left" style="background-image: url('${char.bgImage}')">
+            <div class="character-detail-left">
+                <img src="${char.gif}" alt="${char.name}" class="character-detail-gif" onerror="this.src='${char.image}'">
                 <div class="character-detail-overlay"></div>
             </div>
             <div class="character-detail-right">
@@ -220,6 +212,26 @@ function loadCharacterDetails(charId) {
     modal.show();
 }
 
+// Função para pausar/retomar GIF
+function toggleGif(button) {
+    const gif = button.closest('.character-detail-left').querySelector('.character-detail-image');
+    const currentSrc = gif.src;
+    
+    if (currentSrc.includes('.gif')) {
+        // Se for GIF, troca para imagem estática
+        gif.src = currentSrc.replace('.gif', '.jpg');
+        button.textContent = 'Retomar GIF';
+        button.classList.remove('btn-secondary');
+        button.classList.add('btn-primary');
+    } else {
+        // Se for imagem estática, troca para GIF
+        gif.src = currentSrc.replace('.jpg', '.gif');
+        button.textContent = 'Pausar GIF';
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-secondary');
+    }
+}
+
 // Carregar personagens no layout vertical
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('characters-vertical');
@@ -236,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Adicionar evento de clique para mostrar detalhes
         charItem.addEventListener('click', function() {
             loadCharacterDetails(char.id);
         });
@@ -308,7 +319,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Redimensionar ao mudar tamanho da tela
 window.addEventListener('resize', function() {
-    // Recarregar os personagens quando a tela mudar de tamanho
     document.dispatchEvent(new Event('DOMContentLoaded'));
 });
-

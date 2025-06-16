@@ -3,18 +3,34 @@ const wallpapers = [
     {
         id: "gon-wall",
         title: "Gon Freecss",
-        image: "assets/images/wallpapers/gon.jpg",
+        image: "assets/images/wallpapers/gon.png",
         category: "characters",
         resolution: "1920x1080",
-        download: "assets/images/wallpapers/gon-full.jpg"
+        download: "assets/images/wallpapers/gon.png"
     },
     {
         id: "killua-wall",
         title: "Killua Zoldyck",
-        image: "assets/images/wallpapers/killua.jpg",
+        image: "assets/images/wallpapers/killua.png",
         category: "characters",
         resolution: "1920x1080",
-        download: "assets/images/wallpapers/killua-full.jpg"
+        download: "assets/images/wallpapers/killua.png"
+    },
+        {
+        id: "gon-wall",
+        title: "Equipe",
+        image: "assets/images/wallpapers/time.jpg",
+        category: "groups",
+        resolution: "1920x1080",
+        download: "assets/images/wallpapers/time.jpg"
+    },
+    {
+        id: "killua-wall",
+        title: "Kurapika",
+        image: "assets/images/wallpapers/kurapika.jpg",
+        category: "art",
+        resolution: "1920x1080",
+        download: "assets/images/wallpapers/kurapika.jpg"
     },
     // Adicione mais wallpapers
 ];
